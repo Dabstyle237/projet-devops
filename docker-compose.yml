@@ -3,6 +3,8 @@ services:
     image: ghcr.io/dabstyle237/projet-devops:latest
     ports:
       - "5000:5000"
+    volumes:
+      - app-data:/data
     restart: always
   prometheus:
     image: prom/prometheus
@@ -22,4 +24,5 @@ services:
     restart: always
 
 volumes:
+  app-data:
   grafana-data:
