@@ -6,6 +6,7 @@ services:
     environment:
       ADMIN_PASSWORD: "admin123"
       RESTO_NOM: "Le Bon Goût"
+      DB_PATH: "/data/bongout.db"
     volumes:
       - app-data:/data
     restart: always
