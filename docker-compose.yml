@@ -1,44 +1,31 @@
 services:
-
   app:
     image: ghcr.io/dabstyle237/projet-devops:latest
-
     ports:
       - "5000:5000"
-
+    environment:
+      ADMIN_PASSWORD: "admin123"
+      RESTO_NOM: "Le Bon Goût"
     volumes:
       - app-data:/data
-
     restart: always
-
   prometheus:
     image: prom/prometheus
-
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
-
     ports:
       - "9090:9090"
-
     restart: always
-
   grafana:
     image: grafana/grafana
-
     ports:
       - "3000:3000"
-
     volumes:
       - grafana-data:/var/lib/grafana
-
     depends_on:
       - prometheus
-
     restart: always
 
-
 volumes:
-
   app-data:
-
   grafana-data:
