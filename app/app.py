@@ -266,7 +266,7 @@ MENU = """
 """
 
 PANIER = """
-<h1>Nos panier</h1>
+<h1>Nos paniers</h1>
 {% if lignes %}
 <table>
   <tr><th>Plat</th><th>Prix</th><th>Quantité</th><th>Sous-total</th></tr>
